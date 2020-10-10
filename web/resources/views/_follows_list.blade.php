@@ -1,16 +1,14 @@
-<h3 class="font-bold text-xl mb-4">Friends</h3>
-{{--https://i.pravatar.cc/40--}}
-{{--ul>li>div.flex.item-center(img[src=https://i.pravatar.cc/40 alt=avatar].profile.rounded-full.mr-2>span.name{John Doe})*5--}}
+<h3 class="font-bold text-xl mb-4">Following&nbsp;😊 </h3>
 
 <ul>
-    @foreach(range(1, 8) as $index)
+    @foreach(auth()->user()->follows as $user)
         <li class="mb-4">
             <div class="flex item-center text-sm">
                 <img
-                    src="https://api.adorable.io/avatars/40/tweety.png"
+                    src="{{$user->avatar}}"
                     alt="avatar"
                     class="profile rounded-full mr-2">
-                <p>John Doe</p>
+                <p>{{$user->name}}</p>
             </div>
         </li>
     @endforeach
