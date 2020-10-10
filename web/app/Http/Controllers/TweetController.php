@@ -7,6 +7,15 @@ use Illuminate\Http\Request;
 
 class TweetController extends Controller
 {
+
+    public function index()
+    {
+        //@TODO:change to timeline;
+        return view('home', [
+            'tweets' => auth()->user()->timeline()
+        ]);
+    }
+
     public function store()
     {
 
