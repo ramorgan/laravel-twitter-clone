@@ -11,7 +11,7 @@ class TweetController extends Controller
     public function index()
     {
         //@TODO:change to timeline;
-        return view('home', [
+        return view('tweets.index', [
             'tweets' => auth()->user()->timeline()
         ]);
     }
