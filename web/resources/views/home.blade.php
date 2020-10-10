@@ -21,7 +21,7 @@
 
 
         <div class="lg:w-1/6 bg-blue-100 rounded-large p-4">
-            @include('_friends_list')
+            @include('_follows_list')
         </div>
     </div>
 @endsection
