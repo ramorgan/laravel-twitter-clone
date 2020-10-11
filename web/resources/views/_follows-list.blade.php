@@ -8,7 +8,10 @@
                     <img
                         src="{{$user->avatar}}"
                         alt="avatar"
-                        class="profile rounded-full mr-2">
+                        class="profile rounded-full mr-2"
+                        width="40"
+                        height="40"
+                    >
                     <p>{{$user->name}}</p>
                 </a>
             </div>
