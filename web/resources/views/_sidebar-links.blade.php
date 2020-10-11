@@ -17,9 +17,11 @@
     <li>
         <a class="font-bold text-lg mb-4 block" href="#">Lists</a>
     </li>
+    @if (!Auth::guest())
     <li>
         <a class="font-bold text-lg mb-4 block" href="{{route('profile', auth()->user())}}">Profile</a>
     </li>
+    @endif
     <li>
         <a class="font-bold text-lg block" href="#">More</a>
     </li>

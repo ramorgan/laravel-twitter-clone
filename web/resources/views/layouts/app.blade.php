@@ -44,7 +44,9 @@
                 </div>
 
                 <div class="lg:w-1/6">
-                    @include ('_follows-list')
+                    @if (!Auth::guest())
+                        @include ('_follows-list')
+                    @endif
                 </div>
             </div>
         </main>
