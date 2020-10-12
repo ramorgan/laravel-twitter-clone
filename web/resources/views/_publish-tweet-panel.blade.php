@@ -7,7 +7,7 @@
             name="body"
             id="msg_body"
             placeholder="Whats up Doc?"
-            class="w-full"
+            class="w-full bg-gray-600 border border-black"
 {{--                    required--}}
                 ></textarea>
 
