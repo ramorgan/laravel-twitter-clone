@@ -1,6 +1,4 @@
-@extends('layouts.app')
-
-@section('content')
+<x-app>
     <header class="mb-6 relative">
         <img
             src="https://placehold.it/700x300"
@@ -40,4 +38,4 @@
 
     @include('_timeline', ['tweets' => $user->tweets])
 
-@endsection
+</x-app>
