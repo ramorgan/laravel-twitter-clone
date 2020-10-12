@@ -27,3 +27,5 @@ Route::middleware('auth')->group(function (){
     Route::get('/tweets', 'App\Http\Controllers\TweetController@index')->name('home');
     Route::post('/tweets', 'App\Http\Controllers\TweetController@store');
 });
+
+Route::get('/u/{user}', 'App\Http\Controllers\ProfilesController@show')->name('profile');

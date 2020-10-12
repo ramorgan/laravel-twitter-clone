@@ -44,7 +44,8 @@ class User extends Authenticatable
     ];
 
     public function getAvatarAttribute(){
-        return "https://api.adorable.io/avatars/50/".$this->email."@tweety.png";
+        return "https://api.adorable.io/avatars/200/".$this->email."@tweety.png";
+//        return "https://api.adorable.io/avatars/50/".$this->email."@tweety.png";
     }
 
     public function timeline()
@@ -75,6 +76,12 @@ class User extends Authenticatable
      */
     public function follows(){
         return $this->belongsToMany(User::class, 'follows', 'user_id', 'following_user_id');
+    }
+
+    public function getRouteKeyName()
+    {
+        //@todo: change to username when we set that up.
+        return 'name';
     }
 
 }

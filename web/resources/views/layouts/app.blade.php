@@ -17,22 +17,38 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles -->
-    {{--    <link href="{{ asset('css/app.css') }}" rel="stylesheet">--}}
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 </head>
 <body>
-<div id="app">
-    <section class="px-8 py-9" mb-6>
+<div id="app" class="bg-gray-700">
+    <section class="px-8 py-4 mb-6">
         <header class="container mx-auto">
             <h1>
-                <img src="/images/logo.svg" alt="Tweety">
+                <img
+                    src="/images/logo.svg"
+                    alt="Tweety"
+                >
             </h1>
         </header>
     </section>
 
     <section class="px-8">
         <main class="container mx-auto">
-            @yield('content')
+            <div class="lg:flex lg:justify-center">
+                <div class="lg:w-32">
+                    @include ('_sidebar-links')
+                </div>
+
+                <div class="lg:flex-1 lg:mx-10 lg:mb-10" style="max-width: 700px">
+                    @yield('content')
+                </div>
+
+                <div class="lg:w-1/6">
+                    @if (!Auth::guest())
+                        @include ('_follows-list')
+                    @endif
+                </div>
+            </div>
         </main>
     </section>
 </div>
