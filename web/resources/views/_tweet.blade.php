@@ -1,5 +1,4 @@
-<div class="flex p-4 border-b border-b-gray-400">
-    Hi mom
+<div class="flex p-4 {{$loop->last ? '':'border-b border-b-gray-400'}}">
     <a href="{{$tweet->user->path()}}">
         <div class="mr-2 flex-shrink-0">
             <img
