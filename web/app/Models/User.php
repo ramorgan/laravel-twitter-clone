@@ -80,7 +80,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAvatarAttribute(){
+    public function getAvatarAttribute()
+    {
         return "https://joeschmoe.io/api/v1/{$this->email}";
 //        return "https://api.adorable.io/avatars/200/".$this->email."@tweety.png";
     }
@@ -89,14 +90,20 @@ class User extends Authenticatable
     {
         $following = $this->follows()->pluck('id');
 
-        return Tweet::whereIn('user_id',$following)
+        return Tweet::whereIn('user_id', $following)
             ->orWhere('user_id', $this->id)
             ->latest()
             ->get();
     }
 
-
-    public function tweets(){
+    public function tweets()
+    {
         return $this->hasMany(Tweet::class);
     }
+
+    public function path()
+    {
+        return route('profile', $this);
+    }
+
 }

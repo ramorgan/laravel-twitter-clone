@@ -1,5 +1,6 @@
 <div class="flex p-4 border-b border-b-gray-400">
-    <a href="{{route('profile', $tweet->user)}}">
+    Hi mom
+    <a href="{{$tweet->user->path()}}">
         <div class="mr-2 flex-shrink-0">
             <img
                 src="{{$tweet->user->avatar}}"
@@ -13,7 +14,7 @@
 
     <div>
         <h5 class="font-bold">
-            <a href="{{route('profile', $tweet->user)}}">
+            <a href="{{$tweet->user->path()}}">
                 {{$tweet->user->name}}
             </a>
         </h5>
