@@ -81,8 +81,8 @@ class User extends Authenticatable
     ];
 
     public function getAvatarAttribute(){
-        return "https://api.adorable.io/avatars/200/".$this->email."@tweety.png";
-//        return "https://api.adorable.io/avatars/50/".$this->email."@tweety.png";
+        return "https://joeschmoe.io/api/v1/{$this->email}";
+//        return "https://api.adorable.io/avatars/200/".$this->email."@tweety.png";
     }
 
     public function timeline()
