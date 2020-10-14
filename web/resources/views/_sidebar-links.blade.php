@@ -19,7 +19,7 @@
     </li>
     @if (!Auth::guest())
     <li>
-        <a class="font-bold text-lg mb-4 block" href="{{route('profile', auth()->user())}}">Profile</a>
+        <a class="font-bold text-lg mb-4 block" href="{{route('profile', current_user())}}">Profile</a>
     </li>
     @endif
     <li>
