@@ -1,13 +1,21 @@
 <x-app>
     <header class="mb-6 relative">
-        <img
-            src="https://placehold.it/700x300"
-            alt="profile-banner"
-            class="mb-2 rounded-lg"
-        >
+        <div class="relative">
+            <img
+                src="https://placehold.it/700x300"
+                alt="profile-banner"
+                class="mb-2 rounded-lg"
+            >
+            <img
+                src="{{$user->avatar}}"
+                alt="avatar"
+                class="rounded-full mr-2 absolute bottom-0 transform -translate-x-1/2 translate-y-1/2"
+                style="left:50%;"
+                width="150"
+            >
+        </div>
 
-
-        <div class="flex justify-between items-center mb-4">
+        <div class="flex justify-between items-center mb-6">
             <div>
                 <h2 class="font-bold text-2xl mb-0">{{$user->name}}</h2>
                 <p class="text-sm">Joined {{$user->created_at->diffForHumans()}}</p>
@@ -24,16 +32,10 @@
             temporibus veniam veritatis voluptatum.
         </p>
 
-        <img
-            src="{{$user->avatar}}"
-            alt="avatar"
-            class="rounded-full mr-2 absolute"
-            style="width: 150px; left: calc(50% - 75px); top: 200px;"
-        >
 
     </header>
 
-    <hr/>
+{{--    <hr/>--}}
 
 
     @include('_timeline', ['tweets' => $user->tweets])
