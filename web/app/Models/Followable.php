@@ -37,8 +37,9 @@ trait Followable
     {
         return $this->follows()->save($user);
     }
+
     public function unfollow(User $user)
-{
-    return $this->follows()->detach($user);
-}
+    {
+        return $this->follows()->detach($user);
+    }
 }
