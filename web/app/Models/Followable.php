@@ -9,10 +9,15 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 trait Followable
 {
-
-    public function following()
+    /**
+     * @param  User  $user
+     * @return bool
+     */
+    public function following(User $user)
     {
-
+        return $this->follows()
+            ->where('following_user_id', $user->id)
+            ->exists();
     }
 
     /**
@@ -32,4 +37,8 @@ trait Followable
     {
         return $this->follows()->save($user);
     }
+    public function unfollow(User $user)
+{
+    return $this->follows()->detach($user);
+}
 }

@@ -21,7 +21,7 @@
                         type="submit"
                         class="bg-blue-500 rounded-lg shadow py-2 px-4 text-white text-xs"
                     >
-                        Follow
+                        {{ auth()->user()->following($user) ? 'Unfollow Me' : 'Follow Me' }}
                     </button>
                 </form>
             </div>

@@ -9,7 +9,12 @@ class FollowsController extends Controller
 {
     public function store(User $user)
     {
-        auth()->user()->follow($user);
+        $following = auth()->user()->following($user);
+        if($following)
+            auth()->user()->unfollow($user);
+        else{
+            auth()->user()->follow($user);
+        }
 
         return back();
     }
