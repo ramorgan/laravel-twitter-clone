@@ -48,6 +48,7 @@ class ProfilesController extends Controller
                 ]
             ]
         );
+        $attributes['avatar'] = request('avatar')->store('avatars');
 
         $user->update($attributes);
 

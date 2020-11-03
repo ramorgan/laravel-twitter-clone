@@ -60,6 +60,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'avatar',
     ];
 
     /**
@@ -81,10 +82,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($value)
     {
-        return "https://joeschmoe.io/api/v1/{$this->email}";
-//        return "https://api.adorable.io/avatars/200/".$this->email."@tweety.png";
+        if(isset($value)){
+            return asset($value);
+        }
+        else{
+            return "https://joeschmoe.io/api/v1/{$this->email}";
+        }
     }
 
     public function timeline()
