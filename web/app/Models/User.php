@@ -56,9 +56,11 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
+        'username',
         'name',
         'email',
         'password',
+        'avatar',
     ];
 
     /**
@@ -80,10 +82,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function getAvatarAttribute()
+    public function getAvatarAttribute($value)
     {
-        return "https://joeschmoe.io/api/v1/{$this->email}";
-//        return "https://api.adorable.io/avatars/200/".$this->email."@tweety.png";
+        if(isset($value)){
+            return asset($value);
+        }
+        else{
+            return "https://joeschmoe.io/api/v1/{$this->email}";
+        }
     }
 
     public function timeline()
@@ -103,7 +109,7 @@ class User extends Authenticatable
 
     public function path($append = '')
     {
-        $path = route('profile', $this);
+        $path = route('profile', $this->username);
         return $append ? "{$path}/{$append}" : $path;
     }
 
