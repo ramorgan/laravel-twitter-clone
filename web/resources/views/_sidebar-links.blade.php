@@ -23,6 +23,10 @@
     </li>
     @endif
     <li>
-        <a class="font-bold text-lg block" href="#">More</a>
+        <form method="POST" action="/logout">
+            @csrf
+
+            <button class="font-bold text-lg">Logout</button>
+        </form>
     </li>
 </ul>
