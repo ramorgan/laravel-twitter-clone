@@ -352,3 +352,8 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/phpstorm,laravel,linux,macos,windows,sublimetext,composer,node
+
+
+# Symlink for public files
+web/public/storage
+web/public/avatars
