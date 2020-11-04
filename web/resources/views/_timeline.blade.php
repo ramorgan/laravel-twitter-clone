@@ -4,4 +4,5 @@
     @empty
         <p class="p-4"> no tweets yet.</p>
     @endforelse
+        {{ $tweets->links('pagination::tweety') }}
 </div>
