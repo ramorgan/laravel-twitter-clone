@@ -8,8 +8,8 @@
             id="msg_body"
             placeholder="Whats up Doc?"
             class="w-full bg-gray-600 border border-black"
-{{--                    required--}}
-                ></textarea>
+            required
+        ></textarea>
 
         <hr class="my-4"/>
 
