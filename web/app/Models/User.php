@@ -88,7 +88,8 @@ class User extends Authenticatable
             return asset($value);
         }
         else{
-            return "https://joeschmoe.io/api/v1/{$this->email}";
+            return "/images/default_avatar.jpg";
+//            return "https://joeschmoe.io/api/v1/{$this->email}";
         }
     }
 
