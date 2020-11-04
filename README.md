@@ -26,3 +26,7 @@
     - http://twitter-clone.docksal/register
 - add content to test the site with factorys (optional)
     - `fin artisan tinker`  
+    - Generate tweets for each user
+      - `$users = App\Models\User::all()`
+      - `$users->skip(1)` Don't make tweets for your test user
+      - `$users->each(function ($user) { App\Models\Tweet::factory()->count(10)->create(['user_id' => $user->id]); });`
