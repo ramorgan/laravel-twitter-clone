@@ -23,12 +23,14 @@
 <div id="app" class="bg-gray-700 h-full">
     <section class="px-8 py-4 mb-6">
         <header class="container mx-auto">
-            <h1>
-                <img
-                    src="/images/logo.svg"
-                    alt="Tweety"
-                >
-            </h1>
+            <a href="/">
+                <h1>
+                    <img
+                        src="/images/logo.svg"
+                        alt="Tweety"
+                    >
+                </h1>
+            </a>
         </header>
     </section>
     {{ $slot }}
